@@ -1,4 +1,7 @@
 # ScenarioBench (Private)
+## License
+MIT © 2025 Zahra Atf
+![License](https://img.shields.io/badge/license-MIT-informational)
 
 **[📄 Preprint (PDF)](docs/scenariobench-preprint.pdf)**
 
