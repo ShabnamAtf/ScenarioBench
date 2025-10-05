@@ -31,6 +31,8 @@ pip install -r requirements.txt  # if present
 python stage16_run_all.bat
 # or:
 # python scripts/quick_log.py
+
+```
 prolog/                     # policy clauses (deterministic rules)
 scenarios/                  # YAML/JSON scenarios
 schema/                     # JSON Schemas for scenarios/logs
