@@ -1,6 +1,7 @@
 # ScenarioBench (Private)
+
 ## License
-MIT © 2025 Zahra Atf
+MIT © 2025 Zahra Atf  
 ![License](https://img.shields.io/badge/license-MIT-informational)
 
 **[📄 Preprint (PDF)](docs/scenariobench-preprint.pdf)**
@@ -19,9 +20,6 @@ Trace-grounded compliance benchmark for **Text-to-SQL** and **RAG**. Systems mus
 ---
 
 ## Quickstart
-
-> Tested on Python 3.10–3.12 (Windows). Adjust paths as needed.
-
 ```bash
 # create & activate venv (Windows)
 python -m venv .venv && .\.venv\Scripts\activate
@@ -30,7 +28,6 @@ python -m venv .venv && .\.venv\Scripts\activate
 pip install -r requirements.txt  # if present
 
 # run a minimal demo (adjust when your scripts are ready)
-# Example placeholders:
 python stage16_run_all.bat
 # or:
 # python scripts/quick_log.py
@@ -40,6 +37,7 @@ schema/                     # JSON Schemas for scenarios/logs
 spec/                       # log schema & docs
 stage16_run_all.bat         # starter scripts (Windows)
 stage16_run_sut.bat
+
 Metrics (at a glance)
 
 Decision: Accuracy, Macro-F1
@@ -67,5 +65,3 @@ Seed expansion (≈50–150 scenarios, bilingual variants)
 CLI for metrics & ablations; manifest snapshots (DB/index/rules)
 
 Lightweight rerank + rule-only trace critic under latency budgets
-
-Citation (placeholder)
