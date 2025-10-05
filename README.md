@@ -17,3 +17,10 @@ python stage16_run_all.bat       # or: python scripts/quick_log.py
 - NLQ-to-SQL judged by **result-set equivalence** (on `clause_id`)
 - Metrics: decision Acc/M-F1, trace completeness/correctness/order, Recall@k/MRR/nDCG, SQL acc, coverage, latency, hallucination
 - **SDI / SDI-R**: difficulty & budget-aware aggregation
+## Repo Structure (abridged)
+prolog/                     # policy clauses (deterministic rules)
+scenarios/                  # YAML/JSON scenarios
+schema/                     # JSON Schemas for scenarios/logs
+spec/                       # log schema & docs
+stage16_run_all.bat         # starter scripts (Windows)
+stage16_run_sut.bat
