@@ -33,6 +33,10 @@ python stage16_run_all.bat
 # python scripts/quick_log.py
 
 ```
+
+
+## Repo Structure (abridged)
+```text
 prolog/                     # policy clauses (deterministic rules)
 scenarios/                  # YAML/JSON scenarios
 schema/                     # JSON Schemas for scenarios/logs
@@ -40,8 +44,9 @@ spec/                       # log schema & docs
 stage16_run_all.bat         # starter scripts (Windows)
 stage16_run_sut.bat
 
-Metrics (at a glance)
 
+Metrics (at a glance)
+```
 Decision: Accuracy, Macro-F1
 
 Trace: Completeness, Correctness, Order (Kendall-τ)
