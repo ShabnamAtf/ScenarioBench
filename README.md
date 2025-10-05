@@ -6,6 +6,25 @@ Trace-grounded compliance benchmark for **Text-to-SQL** and **RAG**: systems mus
 
 ## Quickstart (placeholder)
 ```bash
+Features
+
+Clause-level grounding (trace ⊆ retrieved@k)
+
+No-peek gold package (evaluator-only)
+
+NLQ-to-SQL scored by result-set equality
+
+Metrics: decision acc/F1, trace C/K/O, Recall@k/MRR/nDCG, SQL acc, coverage, latency, hallucination
+
+SDI / SDI-R for difficulty & budget
+
+Roadmap
+
+Seed scenarios (N≈16), SQLite Policy_DB, BM25 + Hybrid
+
+Logs (JSONL/CSV) + simple CLI for metrics
+
+Repro scripts and manifest snapshots
 # after cloning:
 python -m venv .venv && .\.venv\Scripts\activate
 pip install -r requirements.txt
