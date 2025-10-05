@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+*.code-workspace
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+*.log
+*.tmp
+*.bak
+
+# Build / outputs
+build/
+dist/
+out/
+release/
+reports/
+docs/_build/
+
+# Data & models (keep placeholders)
+data/*
+!data/README.md
+models/*
+!models/.gitkeep
+
+# Policy DB snapshots (avoid huge .db files in git)
+policy_db/*
+!policy_db/README.md
