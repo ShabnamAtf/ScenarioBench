@@ -1,0 +1,16 @@
+{"scenario_id": "ADSTAND-SOCIAL-TESTIMONIAL-001", "decision_gold": "escalate", "trace_gold": ["104", "101"]}
+{"scenario_id": "ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["101", "102"]}
+{"scenario_id": "ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["103", "104"]}
+{"scenario_id": "ADV-CASL-EMAIL-CEM-001-INCOMPLETE-001", "decision_gold": "escalate", "trace_gold": ["102"]}
+{"scenario_id": "ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["104", "101"]}
+{"scenario_id": "ADV-CASL-EMAIL-UNSUB-003-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["101", "102"]}
+{"scenario_id": "ADV-CASL-EMAIL-UNSUB-003-INCOMPLETE-001", "decision_gold": "escalate", "trace_gold": ["102"]}
+{"scenario_id": "ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["104", "101"]}
+{"scenario_id": "ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["103", "104"]}
+{"scenario_id": "ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001", "decision_gold": "escalate", "trace_gold": ["102", "103"]}
+{"scenario_id": "CASL-EMAIL-CEM-001", "decision_gold": "block", "trace_gold": ["102", "103"]}
+{"scenario_id": "CASL-EMAIL-TRANSACTIONAL-002", "decision_gold": "allow", "trace_gold": ["101", "102"]}
+{"scenario_id": "CASL-EMAIL-UNSUB-003", "decision_gold": "escalate", "trace_gold": ["103", "104"]}
+{"scenario_id": "CRTC-SMS-DNCL-001", "decision_gold": "block", "trace_gold": ["101", "102"]}
+{"scenario_id": "PIPEDA-WEB-PI-007", "decision_gold": "escalate", "trace_gold": ["101", "102"]}
+{"scenario_id": "QL25-LANDING-CONSENT-001", "decision_gold": "escalate", "trace_gold": ["102", "103"]}

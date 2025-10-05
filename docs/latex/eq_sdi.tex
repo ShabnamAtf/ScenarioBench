@@ -1,0 +1,13 @@
+% SDI & SDI-R equations
+\begin{align}
+T &= \frac{T_c + T_k + T_o}{3}, \qquad
+R = 1 - \operatorname{nDCG}@k, \label{eq:trace_retrieval}\\[2pt]
+\mathrm{SDI} &= w_D\,D + w_T\,T + w_R\,R, \qquad
+w_D + w_T + w_R = 1, \label{eq:sdi}\\[2pt]
+\rho &= \min\!\left(1, \frac{L - L_{\mathrm{base}}}{L_{\mathrm{base}}}\right), \quad
+\lambda \in [0,1], \label{eq:rho}\\[2pt]
+\mathrm{SDI\!-\!R} &= \mathrm{SDI}\,\bigl(1 - \lambda\,\rho\bigr). \label{eq:sdir}
+\end{align}
+
+% Defaults used in our experiments (can be noted in text):
+% w_D=0.5,\; w_T=0.3,\; w_R=0.2,\; \lambda=0.3,\; k=10.

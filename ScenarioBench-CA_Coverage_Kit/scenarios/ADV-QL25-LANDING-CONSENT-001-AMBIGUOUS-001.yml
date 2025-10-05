@@ -1,0 +1,56 @@
+$schema: ../schema/scenario.schema.json
+id: ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001
+title: QL25 LANDING CONSENT 001 — DNCL listing (ambiguous/escalate)
+policy_family: CRTC_DNCL
+channel: sms
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: ''
+  body: '
+
+
+    [SMS to DNCL-listed number]'
+  landing_copy: Create account to continue
+gold:
+  decision: escalate
+  rationale: Number listed on DNCL; requires manual review for applicable exemptions
+    or consent status.
+  expected_trace:
+  - CHECK:dncl_violation
+  - DECISION:escalate
+  policy_refs: []
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: Quebec_Law25
+  clause_id: QL25:Consent
+  modality: REQUIRE
+  channel: landing_page
+  message_intent: informational
+  consent_state: none
+  relationship: none
+  audience: general
+  region: QC
+  pi_types: basic
+  claim_types: []
+  substantiation: none
+  disclosures:
+  - privacy_link
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 3
+  evidence_required:
+  - consent_notice_text
+  expected_decision_space: escalate
+  variant_of: QL25-LANDING-CONSENT-001
+  variant: ambiguous
+message_intent: informational
+evidence:
+  dncl_listed: true
+scenario_id: ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001
+context: {}

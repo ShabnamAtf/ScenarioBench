@@ -1,0 +1,4 @@
+{"intent":"TopKClauses","slots":{"domain":"canadian anti-spam","jurisdiction":"CA","k":3}}
+{"intent":"TopKClauses","slots":{"topic":"unsubscribe","channel":"newsletter","consent_type":"opt in","jurisdiction":"CA","k":5}}
+{"intent":"CountClauses","slots":{"domain":"CRTC","channel":"robocall","jurisdiction":"CA"}}
+{"intent":"FindClauses","slots":{"topic":"contest","channel":"txt","terms":["prize draw"],"jurisdiction":"CA"}}

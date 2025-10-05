@@ -1,0 +1,10 @@
+﻿{
+  "id": "ADV-002",
+  "context": { "channel": "social", "jurisdiction": "CA", "product": "Fund B" },
+  "content": "This promo includes high_risk performance projections; no forbidden terms; copy does not explicitly need_edit.",
+  "gold": {
+    "decision": "escalate",
+    "trace": ["C12","C34","C07"],
+    "clauses": ["C12","C34","C07"]
+  }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "id": "ADV-003",
+  "context": { "channel": "web", "jurisdiction": "CA", "product": "Fund C" },
+  "content": "This copy contains a forbidden performance guarantee and must be corrected.",
+  "gold": {
+    "decision": "block",
+    "trace": ["C02","C18","C09"],
+    "clauses": ["C02","C18","C09"]
+  }
+}

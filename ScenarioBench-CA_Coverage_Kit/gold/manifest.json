@@ -1,0 +1,118 @@
+﻿{
+    "canon_version":  "ca_canon@2025-09-11",
+    "entries":  [
+                    {
+                        "scenario_id":  "ADSTAND-SOCIAL-TESTIMONIAL-001",
+                        "file":  "gold/ADSTAND-SOCIAL-TESTIMONIAL-001.gold.yml",
+                        "sha256":  "05B6809ACF45CD376AA88114E86001B4653613E9950579F514913BCA9E71D8F6",
+                        "bytes":  454,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001",
+                        "file":  "gold/ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "D157EBE0F3AEF8415B6AF8347EF2056FB49DF93E9117F01AFDB43B7220BB9736",
+                        "bytes":  468,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001",
+                        "file":  "gold/ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "77FAE35CE4D6A8C911A0E14CF03BF7CDB721E2CBC553CF464A3550181158D972",
+                        "bytes":  456,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-CASL-EMAIL-CEM-001-INCOMPLETE-001",
+                        "file":  "gold/ADV-CASL-EMAIL-CEM-001-INCOMPLETE-001.gold.yml",
+                        "sha256":  "8C53A107FBBDAE79D50179A3943C60D34DB606457C1C3B8CF0215A452BA961E9",
+                        "bytes":  457,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001",
+                        "file":  "gold/ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "1A060EC73AC50993F4F7C53A7ACB1B6495513AD66947AB27B107871EBF2A04A1",
+                        "bytes":  466,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-CASL-EMAIL-UNSUB-003-AMBIGUOUS-001",
+                        "file":  "gold/ADV-CASL-EMAIL-UNSUB-003-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "1134E88292F06FA73DF429DA7C4C535E1950DDC2BD041068B45060C400B4DB24",
+                        "bytes":  458,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-CASL-EMAIL-UNSUB-003-INCOMPLETE-001",
+                        "file":  "gold/ADV-CASL-EMAIL-UNSUB-003-INCOMPLETE-001.gold.yml",
+                        "sha256":  "CA69D1DAF68B3CB68C8A190746E52A310E72FFB8D9C4E50B151B41CB9F159513",
+                        "bytes":  459,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001",
+                        "file":  "gold/ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "0324EEB02AC86239EB0C5481581B1BAF881722C73C093D319EFEAA2A940906E8",
+                        "bytes":  455,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001",
+                        "file":  "gold/ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "08B4593BF955BFF16174C888246D7326EFF8C454338E23804AF2AECE50E1300F",
+                        "bytes":  455,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001",
+                        "file":  "gold/ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001.gold.yml",
+                        "sha256":  "CB9F2548EDC3AE3AE7DDC8C8E83BE0C21444B3F79AAEB195F58221B431CE875A",
+                        "bytes":  462,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "CASL-EMAIL-CEM-001",
+                        "file":  "gold/CASL-EMAIL-CEM-001.gold.yml",
+                        "sha256":  "BEFDA9BFA11B48161EDEE681989340184690F108512FF9873145F4F5C69360DC",
+                        "bytes":  439,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "CASL-EMAIL-TRANSACTIONAL-002",
+                        "file":  "gold/CASL-EMAIL-TRANSACTIONAL-002.gold.yml",
+                        "sha256":  "DF3C3EB6BA09ED26612A2F72F7FE53BDFF1B59C0EEF6FADBC45B38DD7E73CD52",
+                        "bytes":  449,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "CASL-EMAIL-UNSUB-003",
+                        "file":  "gold/CASL-EMAIL-UNSUB-003.gold.yml",
+                        "sha256":  "DD2BDCE2EF0A7593D9BA090D57B1F38F5A9D254F9EEEF33388F583E7001E2667",
+                        "bytes":  441,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "CRTC-SMS-DNCL-001",
+                        "file":  "gold/CRTC-SMS-DNCL-001.gold.yml",
+                        "sha256":  "124F8EE027D970B08EEFFEB3696631E9A46843120B7AF868EB859486B5CD6C22",
+                        "bytes":  438,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "PIPEDA-WEB-PI-007",
+                        "file":  "gold/PIPEDA-WEB-PI-007.gold.yml",
+                        "sha256":  "A43E94020543695B3E600BD03407D601CCE7460135B53F257F51BCF47717EB85",
+                        "bytes":  440,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    },
+                    {
+                        "scenario_id":  "QL25-LANDING-CONSENT-001",
+                        "file":  "gold/QL25-LANDING-CONSENT-001.gold.yml",
+                        "sha256":  "482D896ADA0DB688C633E28044D06528502A3F8641E5542EF79EB12601E1ACA1",
+                        "bytes":  445,
+                        "modified":  "2025-09-12T04:58:32Z"
+                    }
+                ],
+    "generated":  "2025-09-12T01:12:02Z"
+}

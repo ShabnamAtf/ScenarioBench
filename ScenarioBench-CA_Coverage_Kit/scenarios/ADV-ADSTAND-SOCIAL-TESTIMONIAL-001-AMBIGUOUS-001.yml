@@ -1,0 +1,57 @@
+$schema: ../schema/scenario.schema.json
+id: ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001
+title: ADSTAND SOCIAL TESTIMONIAL 001 — DNCL listing (ambiguous/escalate)
+policy_family: CRTC_DNCL
+channel: sms
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: ''
+  body: 'Trainer X says: ''Best protein ever!'' #spon
+
+
+    [SMS to DNCL-listed number]'
+  landing_copy: ''
+gold:
+  decision: escalate
+  rationale: Number listed on DNCL; requires manual review for applicable exemptions
+    or consent status.
+  expected_trace:
+  - CHECK:dncl_violation
+  - DECISION:escalate
+  policy_refs: []
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: AdStandards
+  clause_id: AS:Testimonials
+  modality: REQUIRE
+  channel: social
+  message_intent: CEM
+  consent_state: unknown
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types:
+  - testimonial
+  substantiation: weak
+  disclosures:
+  - influencer_tag
+  exceptions: []
+  precedence_path: []
+  risk_severity: M
+  difficulty: 2
+  evidence_required:
+  - testimonial_proof
+  expected_decision_space: safe-rewrite
+  variant_of: ADSTAND-SOCIAL-TESTIMONIAL-001
+  variant: ambiguous
+message_intent: informational
+evidence:
+  dncl_listed: true
+scenario_id: ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001
+context: {}

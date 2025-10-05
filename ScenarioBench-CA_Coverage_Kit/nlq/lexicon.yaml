@@ -1,0 +1,28 @@
+synonyms:
+  channel:
+    email: ["email","e-mail","newsletter"]
+    sms: ["sms","text","txt","message"]
+    social: ["social","facebook","instagram","x","twitter","tiktok","social media"]
+    phone: ["phone","call","telemarketing","robocall"]
+    in-app: ["in-app","in app","push","push notification"]
+    web: ["web","website","landing page"]
+    postal: ["postal","mail","direct mail"]
+  topic:
+    unsubscribe: ["unsubscribe","opt out","stop emails","remove me","unsub"]
+    consent: ["consent","permission","opt-in","agree","authorization"]
+    children: ["children","child","minor","under 13","under thirteen","under 16","kids"]
+    contest: ["contest","sweepstakes","giveaway","prize draw"]
+    pricing: ["price","pricing","fee","charge","cost"]
+  consent_type:
+    express: ["express","explicit"]
+    implied: ["implied"]
+    "opt-in": ["opt-in","opt in","double opt-in","double opt in"]
+    "opt-out": ["opt-out","opt out"]
+  domain:
+    CASL: ["casl","canadian anti-spam","anti-spam","anti spam","anti spam law","canada anti-spam"]
+    PIPEDA: ["pipeda","privacy act (federal)","federal privacy"]
+    ADV: ["adv","advertising","ad rules","marketing rules"]
+    ADSTAND: ["adstand","ad standards","advertising standards","asc"]
+    CRTC: ["crtc","do-not-call","dncl","telemarketing","telecom"]
+    QL25: ["ql25","quebec law 25","law 25","loi 25","bill 64"]
+    GEN: ["gen","general","generic"]

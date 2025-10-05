@@ -1,0 +1,16 @@
+{
+  "num_scenarios": 7,
+  "pairwise_specs": [
+    "channel,consent_state",
+    "message_intent,modality",
+    "claim_types,substantiation",
+    "audience,disclosures",
+    "policy_family,region"
+  ],
+  "wrote": [
+    "coverage_by_dimension.csv",
+    "pairwise_coverage.csv",
+    "clause_coverage.csv",
+    "difficulty_mix.csv"
+  ]
+}

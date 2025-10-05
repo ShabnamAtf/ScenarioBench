@@ -1,0 +1,55 @@
+$schema: ../schema/scenario.schema.json
+id: ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001
+title: CRTC SMS DNCL 001 — DNCL listing (ambiguous/escalate)
+policy_family: CRTC_DNCL
+channel: sms
+message_intent: informational
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: ''
+  body: 'Get instant cash—reply YES.
+
+
+    [SMS to DNCL-listed number]'
+  landing_copy: ''
+gold:
+  decision: escalate
+  rationale: Number listed on DNCL; requires manual review for applicable exemptions
+    or consent status.
+  expected_trace:
+  - CHECK:dncl_violation
+  - DECISION:escalate
+  policy_refs: []
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: CRTC_DNCL
+  clause_id: CRTC:DNCL
+  modality: FORBID
+  channel: sms
+  message_intent: CEM
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: []
+  substantiation: none
+  disclosures: []
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 2
+  evidence_required:
+  - dncl_status
+  expected_decision_space: block
+  variant_of: CRTC-SMS-DNCL-001
+  variant: ambiguous
+evidence:
+  dncl_listed: true
+scenario_id: ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001
+context: {}

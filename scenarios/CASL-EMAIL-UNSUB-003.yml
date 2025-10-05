@@ -1,0 +1,13 @@
+scenario_id: CASL-EMAIL-UNSUB-003
+title: Marketing email without unsubscribe; repairable under CASL
+
+context:
+  jurisdiction: CA
+  channel: email
+  language: en
+  consent_state: none
+
+content: |
+  Subject: Upgrade today!
+  Body: Exclusive offer for you... limited time.
+  Footer: (no unsubscribe link)

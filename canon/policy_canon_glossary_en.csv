@@ -1,0 +1,10 @@
+Term,Short Definition,Source/Reference
+Commercial Electronic Message (CEM),"Any electronic message that encourages participation in a commercial activity (e.g., offers, advertisements, promotions). Generally requires valid consent before sending.",CASL; CRTC guidance
+Transactional Message,"A message primarily to facilitate/complete/confirm an existing transaction (e.g., receipts, warranty notices, safety recalls). Some are exempt or treated differently under CASL.",SOR/2013‑221; CRTC guidance
+Valid Consent (marketing),"For CEMs: express or implied consent per CASL. For data processing: ‘meaningful consent’ per OPC (informed, specific, tied to risks and consequences).",CRTC; OPC meaningful consent
+Personal Information,Information about an identifiable individual; typically excludes employee business contact information in specific contexts.,PIPEDA; OPC
+Unsubscribe Mechanism,"A simple, readily‑performable mechanism that must be included in every CEM to allow recipients to opt out.",SOR/2012‑36
+Child‑Directed Advertising,"Advertising directed to children; in Québec, ads directed at under‑13s are prohibited; broadcast ads elsewhere require preclearance under the Children's Code.",QC Consumer Protection Act; Ad Standards Children’s Code
+Disclosure of Material Connection (Influencer),"Clear, proximate disclosure of any material relationship (e.g., payment, gift) between an influencer and a brand.",Ad Standards Influencer Guidelines (2023)
+Adequate and Proper Testing,Substantiation standard for performance/efficacy claims; the advertiser bears the burden of proof.,Competition Act s.74.01(1)(b)
+National Do Not Call List (DNCL) / Unsolicited Telecommunications Rules,"Registration/subscription obligations for telemarketing, caller identification at the start, and permitted calling hours.",CRTC UTR/DNCL

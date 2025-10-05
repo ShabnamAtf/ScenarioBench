@@ -1,0 +1,50 @@
+$schema: ../schema/scenario.schema.json
+id: QL25-LANDING-CONSENT-001
+title: QL25 LANDING CONSENT 001
+policy_family: Quebec_Law25
+channel: landing_page
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: ''
+  body: ''
+  landing_copy: Create account to continue
+gold:
+  decision: escalate
+  rationale: Consent mechanism missing for PI collection under Law 25.
+  policy_refs:
+  - QL25:Consent
+  expected_trace:
+  - collects_pi(content)=true
+  - consent_mechanism_present=false
+  - REQUIRE unmet → escalate
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: Quebec_Law25
+  clause_id: QL25:Consent
+  modality: REQUIRE
+  channel: landing_page
+  message_intent: informational
+  consent_state: none
+  relationship: none
+  audience: general
+  region: QC
+  pi_types: basic
+  claim_types: []
+  substantiation: none
+  disclosures:
+  - privacy_link
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 3
+  evidence_required:
+  - consent_notice_text
+  expected_decision_space: escalate
+message_intent: informational
+scenario_id: QL25-LANDING-CONSENT-001
+context: {}

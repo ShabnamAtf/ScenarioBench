@@ -1,0 +1,11 @@
+policy_family,clause_id,channel,consent_state,message_intent,claim_types,substantiation,audience,region,target_n
+CASL,CASL:section6,email,none,CEM,price,none,general,CA,3
+CASL,CASL:exception-transactional,email,unknown,transactional,none,none,general,CA,2
+PIPEDA,PIPEDA:4.3,web_banner,none,informational,none,none,general,CA,2
+PIPEDA,PIPEDA:4.8,landing_page,unknown,informational,none,none,general,CA,2
+AdStandards,AS:Testimonials,social,unknown,CEM,testimonial,weak,general,CA,2
+CompetitionAct,CA:74.01,social,unknown,CEM,performance,none,general,CA,2
+Quebec_Law25,QL25:Consent,landing_page,none,informational,none,none,general,QC,2
+CRTC_DNCL,CRTC:DNCL,sms,unknown,CEM,none,none,general,CA,2
+CASL,CASL:unsubscribe,email,unknown,CEM,none,none,general,CA,3
+AdStandards,AS:Environmental,social,unknown,CEM,environmental,weak,general,CA,2

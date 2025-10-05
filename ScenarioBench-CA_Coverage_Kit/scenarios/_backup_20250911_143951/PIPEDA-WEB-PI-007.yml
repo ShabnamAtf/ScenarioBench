@@ -1,0 +1,41 @@
+$schema: ../schema/scenario.schema.json
+id: PIPEDA-WEB-PI-007
+meta:
+  policy_family: PIPEDA
+  clause_id: "PIPEDA:4.3"
+  modality: REQUIRE
+  channel: web_banner
+  message_intent: informational
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: sensitive
+  claim_types: []
+  substantiation: none
+  disclosures: [privacy_link]
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 3
+  evidence_required: ["consent_notice_text"]
+  expected_decision_space: escalate
+context:
+  sender_profile:
+    name: "HealthPlus"
+    domain: "healthplus.example"
+  evidence_flags:
+    collects_sens_pi: true
+    consent_notice_present: false
+content:
+  subject: ""
+  body: ""
+  landing_copy: "Enter your health ID to continue"
+gold_standard:
+  decision: escalate
+  rationale: "Sensitive PI collection without clear consent mechanism (PIPEDA 4.3); requires escalation."
+  policy_refs: ["PIPEDA:4.3"]
+  expected_trace:
+    - "collects_sensitive_pi(content)=true"
+    - "consent_mechanism_present(context)=false"
+    - "REQUIRE unmet → escalate"

@@ -1,0 +1,19 @@
+\begin{table}[!t]
+\centering
+\caption{Baseline results for Stage~20 across engines with and without reflection. Higher is better except hallucination rate and runtime.}
+\label{tab:stage20-baselines}
+\begin{tabular}{lcccccccccc}
+\toprule
+Engine & Refl. & F$_1$ & Trace$_{comp}$ & Policy$_{cov}$ & Halluc. & R@k & MRR & nDCG & NLQ-SQL Acc. & Runtime (s)\\
+\midrule
+BM25-RAG & No & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+Hybrid & No & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+Rule-Only & No & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+Vector-RAG & No & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+BM25-RAG & Yes & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+Hybrid & Yes & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+Rule-Only & Yes & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+Vector-RAG & Yes & nan & nan & nan & nan & nan & nan & nan & nan & nan\\
+\bottomrule
+\end{tabular}
+\end{table}

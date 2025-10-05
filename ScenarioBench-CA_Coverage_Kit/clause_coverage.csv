@@ -1,0 +1,8 @@
+clause_id,scenario_count
+AS:Testimonials,1
+CASL:exception-transactional,1
+CASL:section6,1
+CASL:unsubscribe,1
+CRTC:DNCL,1
+PIPEDA:4.3,1
+QL25:Consent,1

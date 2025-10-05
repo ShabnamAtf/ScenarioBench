@@ -1,0 +1,84 @@
+﻿% Stage-14 tables (requires \usepackage{booktabs})
+\begin{table}[t]
+\centering
+\caption{Stage-14 deliverables and integrity hashes. Sizes shown in KiB; SHA-256 truncated to 12 hex chars for readability.}
+\label{tab:stage14-artifacts}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+\textbf{Artifact} & \textbf{Bytes} & \textbf{KiB} & \textbf{SHA-256 (12)} \\
+\midrule
+\texttt{facts/scenarios\_facts.pl}                 & 5{,}203  & 5.08  & 3d535d24a4ce \\
+\texttt{build/scenarios.csv}                       & 4{,}216  & 4.12  & 20bef64bb35b \\
+\texttt{build/eval.db}                             & 32{,}768 & 32.00 & 249321fb44ea \\
+\texttt{build/index/scenarios\_text.jsonl}         & 2{,}001  & 1.95  & 8fadb204371a \\
+\texttt{build/index/scenarios\_text.tsv}           & 1{,}571  & 1.53  & 6265258d719e \\
+\texttt{build/stage14\_artifacts.zip}              & 6{,}124  & 5.98  & e41865713151 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Stage-14 environment and consistency checks.}
+\label{tab:stage14-env-counts}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Item} & \textbf{Value} \\
+\midrule
+Python & 3.13.3 (Windows 10) \\
+Packages & PyYAML 6.0.2; jsonschema 4.24.0 \\
+Scenario rows in DB & 16 \\
+FTS5 rows & 16 \\
+Prolog \texttt{scenario/4} facts & 16 \\
+Manifest timestamp (UTC) & 2025-09-13T22:58:16Z \\
+Artifacts ZIP hash (full) & \texttt{e418657131517386deaa75e96dbcf34daf5a48c1dae7b5180f53c6994945cf1f} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Self-Retrieval@5 per scenario: lexical BM25/FTS5 vs. vector FAISS.}
+\label{tab:self-retrieval-per-scenario}
+\scriptsize
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Scenario ID} & \textbf{FTS5 rank} & \textbf{FAISS rank} \\
+\midrule
+ADSTAND-SOCIAL-TESTIMONIAL-001 & 1 & 1 \\
+ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001 & 2 & 1 \\
+ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001 & 2 & 1 \\
+ADV-CASL-EMAIL-CEM-001-INCOMPLETE-001 & 1 & 1 \\
+ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001 & 2 & 1 \\
+ADV-CASL-EMAIL-UNSUB-003-AMBIGUOUS-001 & 2 & 1 \\
+ADV-CASL-EMAIL-UNSUB-003-INCOMPLETE-001 & 1 & 1 \\
+ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001 & 2 & 1 \\
+ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001 & 2 & 1 \\
+ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001 & 2 & 1 \\
+CASL-EMAIL-CEM-001 & 1 & 1 \\
+CASL-EMAIL-TRANSACTIONAL-002 & 1 & 1 \\
+CASL-EMAIL-UNSUB-003 & 1 & 1 \\
+CRTC-SMS-DNCL-001 & 1 & 1 \\
+PIPEDA-WEB-PI-007 & 1 & 1 \\
+QL25-LANDING-CONSENT-001 & 1 & 1 \\
+\midrule
+\textbf{Self-Retrieval@5} & \textbf{100\% (16/16)} & \textbf{100\% (16/16)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Rank distribution and summary statistics.}
+\label{tab:self-retrieval-summary}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Metric} & \textbf{FTS5} & \textbf{FAISS} \\
+\midrule
+Rank\,=\,1 (count) & 9 & 16 \\
+Rank\,=\,2 (count) & 7 & 0 \\
+Self-Retrieval@5 & 100\% & 100\% \\
+Median rank & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,46 +1,47 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
-*.pyo
 .venv/
-venv/
 *.egg-info/
-.eggs/
-pip-wheel-metadata/
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
+# Editors
+**/.vscode/
+vscode/
 
-# IDE
-.vscode/
-*.code-workspace
-.idea/
+# Project build/output
+**/build/
+**/release/
+*.zip
 
-# OS
+# Local policy DB artifacts
+**/policy_db/*.db
+**/policy_db/policy_clauses.csv
+**/policy_db/schema.sql
+
+# Figures and large generated assets
+**/paper_assets/figs/
+**/build/figs/
+
+# OS clutter
 .DS_Store
 Thumbs.db
 
-# Logs & temp
-*.log
-*.tmp
-*.bak
+**/paper_assets/gold_meta/
 
-# Build / outputs
-build/
-dist/
-out/
-release/
-reports/
-docs/_build/
+**/paper_assets/tables/
 
-# Data & models (keep placeholders)
-data/*
-!data/README.md
-models/*
-!models/.gitkeep
+**/policy_db/
 
-# Policy DB snapshots (avoid huge .db files in git)
-policy_db/*
-!policy_db/README.md
+**/paper_assets/gold_meta/
+
+**/paper_assets/tables/
+
+**/policy_db/
+
+**/scripts/
+
+!ScenarioBench-CA_Coverage_Kit/scripts/nlq_smoke.ps1
+
+# release artifacts
+release/*.zip
+release/*.sha256

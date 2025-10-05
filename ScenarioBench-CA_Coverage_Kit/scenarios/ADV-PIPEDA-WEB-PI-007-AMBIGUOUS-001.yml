@@ -1,0 +1,56 @@
+$schema: ../schema/scenario.schema.json
+id: ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001
+title: PIPEDA WEB PI 007 — DNCL listing (ambiguous/escalate)
+policy_family: CRTC_DNCL
+channel: sms
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: ''
+  body: '
+
+
+    [SMS to DNCL-listed number]'
+  landing_copy: Enter your health ID to continue
+gold:
+  decision: escalate
+  rationale: Number listed on DNCL; requires manual review for applicable exemptions
+    or consent status.
+  expected_trace:
+  - CHECK:dncl_violation
+  - DECISION:escalate
+  policy_refs: []
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: PIPEDA
+  clause_id: PIPEDA:4.3
+  modality: REQUIRE
+  channel: web_banner
+  message_intent: informational
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: sensitive
+  claim_types: []
+  substantiation: none
+  disclosures:
+  - privacy_link
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 3
+  evidence_required:
+  - consent_notice_text
+  expected_decision_space: escalate
+  variant_of: PIPEDA-WEB-PI-007
+  variant: ambiguous
+message_intent: informational
+evidence:
+  dncl_listed: true
+scenario_id: ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001
+context: {}

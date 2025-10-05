@@ -1,0 +1,20 @@
+dimension,type,allowed_values,required,description
+policy_family,enum,CASL|PIPEDA|CompetitionAct|AdStandards|CRTC_DNCL|Quebec_Law25,yes,Top-level source of the rule or guidance.
+clause_id,string,,yes,Exact clause/guidance id, e.g., CASL:section6 or PIPEDA:4.3.
+modality,enum,FORBID|REQUIRE|PERMIT|RECOMMEND,yes,Normative force of the clause.
+channel,enum,email|sms|social|web_banner|landing_page|chat,yes,Delivery channel.
+message_intent,enum,CEM|transactional|informational|fundraising|survey,yes,Purpose of the message.
+consent_state,enum,express|implied|none|withdrawn|unknown,yes,User consent status.
+relationship,enum,existing_client|inquiry_only|none,no,Prior relationship status.
+audience,enum,general|children|seniors|vulnerable,no,Intended/likely audience.
+region,enum,CA|QC,yes,Jurisdiction (QC triggers Law 25 specifics).
+pi_types,enum,none|basic|sensitive,no,Personal information type involved.
+claim_types,set,price|comparative|performance|testimonial|health|environmental|limited_time,no,Types of advertising claims present (set).
+substantiation,enum,none|weak|adequate,no,Evidence level for claims.
+disclosures,set,unsubscribe|identity|influencer_tag|ad_label|privacy_link,no,Disclosures present (set).
+exceptions,set,,no,IDs of more-specific clauses that carve out exceptions.
+precedence_path,string,,no,Parent->child chain modeling precedence/defeats.
+risk_severity,enum,L|M|H,no,Risk rating for the clause or scenario.
+difficulty,int,,no,1–4 difficulty label assigned to the scenario.
+evidence_required,set,,no,External evidence flags/files required.
+expected_decision_space,enum,allow|block|safe-rewrite|escalate,yes,Expected decision domain for the scenario.

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NLQParsed",
+  "type": "object",
+  "properties": {
+    "intent": {
+      "type": "string",
+      "enum": ["FindClauses","TopKClauses","CountClauses","ShowSection","ListProhibitions"]
+    },
+    "slots": {
+      "type": "object",
+      "properties": {
+        "topic": {"type": ["string","null"]},
+        "channel": {"type": ["string","null"], "enum": ["email","sms","social","phone","in-app","web","postal",null]},
+        "consent_type": {"type": ["string","null"], "enum": ["opt-in","opt-out","implied","express",null]},
+        "purpose": {"type": ["string","null"], "enum": ["marketing","research","service","third-party-sharing",null]},
+        "sensitive_category": {"type": ["string","null"], "enum": ["health","financial","children","biometric","location","none",null]},
+        "audience_age": {"type": ["integer","null"], "minimum": 0},
+        "jurisdiction": {"type": ["string","null"], "enum": ["CA","ON","QC","EU","US",null]},
+        "section": {"type": ["string","null"]},
+        "domain": {"type": ["string","null"], "enum": ["CASL","PIPEDA","ADV","ADSTAND","CRTC","QL25","GEN",null]},
+        "terms": {"type": ["array","null"], "items": {"type": "string"}},
+        "sort_by": {"type": ["string","null"], "enum": ["relevance","recency","severity",null]},
+        "k": {"type": ["integer","null"], "minimum": 1, "maximum": 50},
+        "date_effective_before": {"type": ["string","null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "date_effective_after": {"type": ["string","null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+      },
+      "required": []
+    }
+  },
+  "required": ["intent","slots"]
+}

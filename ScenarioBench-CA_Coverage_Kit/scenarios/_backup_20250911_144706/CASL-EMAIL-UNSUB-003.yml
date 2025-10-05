@@ -1,0 +1,40 @@
+$schema: ../schema/scenario.schema.json
+id: CASL-EMAIL-UNSUB-003
+title: CASL EMAIL UNSUB 003
+audience: general
+region: CA
+content:
+  subject: New arrivals just landed
+  body: Check out our latest picks.
+  landing_copy: ''
+gold:
+  decision: safe-rewrite
+  rationale: CASL requires functional unsubscribe in CEM; add working 
+    unsubscribe.
+  policy_refs:
+    - CASL:unsubscribe
+  expected_trace:
+    - is_cem(content)=true
+    - unsubscribe_present(content)=false
+    - REQUIRE unmet → safe-rewrite
+meta:
+  policy_family: CASL
+  clause_id: CASL:unsubscribe
+  modality: REQUIRE
+  channel: email
+  message_intent: CEM
+  consent_state: unknown
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: []
+  substantiation: none
+  disclosures:
+    - identity
+  exceptions: []
+  precedence_path: []
+  risk_severity: M
+  difficulty: 1
+  evidence_required: []
+  expected_decision_space: safe-rewrite

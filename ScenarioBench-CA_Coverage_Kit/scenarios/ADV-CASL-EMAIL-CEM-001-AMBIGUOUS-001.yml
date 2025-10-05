@@ -1,0 +1,57 @@
+$schema: ../schema/scenario.schema.json
+id: ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001
+title: CASL EMAIL CEM 001 — DNCL listing (ambiguous/escalate)
+policy_family: CRTC_DNCL
+channel: sms
+message_intent: informational
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: Mega deals! 60% off now
+  body: 'Click to save big.
+
+
+    [SMS to DNCL-listed number]'
+  landing_copy: Hurry up!
+gold:
+  decision: escalate
+  rationale: Number listed on DNCL; requires manual review for applicable exemptions
+    or consent status.
+  expected_trace:
+  - CHECK:dncl_violation
+  - DECISION:escalate
+  policy_refs: []
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: CASL
+  clause_id: CASL:section6
+  modality: FORBID
+  channel: email
+  message_intent: CEM
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types:
+  - price
+  substantiation: none
+  disclosures:
+  - identity
+  - unsubscribe
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 1
+  evidence_required: []
+  expected_decision_space: block
+  variant_of: CASL-EMAIL-CEM-001
+  variant: ambiguous
+evidence:
+  dncl_listed: true
+scenario_id: ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001
+context: {}

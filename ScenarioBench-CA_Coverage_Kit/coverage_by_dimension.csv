@@ -1,0 +1,15 @@
+dimension,covered_values,total_values,coverage,values_seen
+policy_family,5,6,0.8333,AdStandards|CASL|CRTC_DNCL|PIPEDA|Quebec_Law25
+modality,3,4,0.75,FORBID|PERMIT|REQUIRE
+channel,5,6,0.8333,email|landing_page|sms|social|web_banner
+message_intent,3,5,0.6,CEM|informational|transactional
+consent_state,2,5,0.4,none|unknown
+relationship,2,3,0.6667,existing_client|none
+audience,1,4,0.25,general
+region,2,2,1.0,CA|QC
+pi_types,3,3,1.0,basic|none|sensitive
+claim_types,2,7,0.2857,price|testimonial
+substantiation,2,3,0.6667,none|weak
+disclosures,4,5,0.8,identity|influencer_tag|privacy_link|unsubscribe
+risk_severity,2,3,0.6667,H|M
+expected_decision_space,0,4,0.0,

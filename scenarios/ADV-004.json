@@ -1,0 +1,10 @@
+﻿{
+  "id": "ADV-004",
+  "context": { "channel": "web", "jurisdiction": "CA", "product": "Fund D" },
+  "content": "Informational update about fees and contacts. No performance claims or calls to action requiring edits.",
+  "gold": {
+    "decision": "allow",
+    "trace": ["C11"],
+    "clauses": ["C11"]
+  }
+}

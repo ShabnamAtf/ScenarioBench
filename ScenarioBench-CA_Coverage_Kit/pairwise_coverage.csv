@@ -1,0 +1,6 @@
+pair,unique_pairs_seen,examples
+channel×consent_state,6,landing_page×none; social×unknown; web_banner×none; email×unknown; sms×none; email×none
+message_intent×modality,4,CEM×REQUIRE; transactional×PERMIT; CEM×FORBID; informational×REQUIRE
+claim_types×substantiation,3,[price]×none; [testimonial]×weak; [∅]×none
+audience×disclosures,5,"general×[identity]; general×[∅]; general×[identity,unsubscribe]; general×[influencer_tag]; general×[privacy_link]"
+policy_family×region,5,Quebec_Law25×QC; PIPEDA×CA; AdStandards×CA; CRTC_DNCL×CA; CASL×CA

@@ -1,0 +1,23 @@
+﻿scenario_id: ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001
+canon_version: ca_canon@2025-09-11
+gold_version: v0.1
+decision: TBD
+clauses:
+  support: []
+  violated: []
+  exceptions_considered: []
+  edges: []
+trace: []
+sql:
+  canonical: "SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;"
+  top_k: 10
+  gold_ranked: []
+  qrels: []
+annotators:
+  rater1: "A1"
+  rater2: ""
+  adjudicator: ""
+notes: ""
+
+
+

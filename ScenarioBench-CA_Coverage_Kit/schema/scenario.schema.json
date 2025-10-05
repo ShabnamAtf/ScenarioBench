@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["scenario_id","context","content","gold"],
+  "properties":{
+    "scenario_id":{"type":"string","pattern":"^[A-Z0-9_-]{3,}$"},
+    "context":{"type":"object"},
+    "content":{"type":["object","string"]},
+    "gold":{
+      "type":"object",
+      "required":["decision","trace","clause_set","sql","topk"],
+      "properties":{
+        "decision":{"enum":["allow","block","safe-rewrite","escalate"]},
+        "trace":{"type":"array","items":{"type":"string","pattern":"^CLAUSE_[A-Z0-9_-]+$"}},
+        "clause_set":{"type":"array","items":{"type":"string"}},
+        "sql":{"type":"string"},
+        "topk":{"type":"array","items":{"type":"string"}}
+      }
+    }
+  }
+}

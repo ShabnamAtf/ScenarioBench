@@ -1,0 +1,52 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scenariobench.ca/schema/stage16_metrics_record.schema.json",
+  "title": "Stage16MetricsRecord",
+  "type": "object",
+  "required": [
+    "run_id", "scenario_id", "system_variant", "phase",
+    "decision_gold", "decision_pred",
+    "trace_gold", "trace_pred",
+    "retrieved_clause_ids", "gold_clause_ids",
+    "trace_completeness", "trace_correctness", "trace_order",
+    "policy_coverage", "hallucination_rate",
+    "runtime_ms_total", "latency_ms", "timestamp"
+  ],
+  "properties": {
+    "run_id":         { "type": "string", "description": "Unique run identifier (e.g., 2025-09-13_16)" },
+    "scenario_id":    { "type": "string", "description": "Scenario identifier" },
+    "system_variant": { "type": "string", "description": "System/config tag (e.g., rule-only, bm25, hybrid-v1)" },
+    "phase":          { "type": "string", "enum": ["pre","post"], "description": "Pre- or post-reflection phase" },
+
+    "decision_gold":  { "type": "string", "description": "Gold decision label" },
+    "decision_pred":  { "type": "string", "description": "Predicted decision label" },
+
+    "trace_gold":     { "type": "array", "items": { "type":"string" }, "description": "Ordered gold trace of clause IDs" },
+    "trace_pred":     { "type": "array", "items": { "type":"string" }, "description": "Ordered predicted trace" },
+
+    "retrieved_clause_ids": { "type": "array", "items": { "type":"string" }, "description": "Top-k retrieved clause IDs (union across retrievers if hybrid)" },
+    "gold_clause_ids":      { "type": "array", "items": { "type":"string" }, "description": "Set of governing clause IDs" },
+
+    "trace_completeness": { "type": "number", "minimum": 0.0, "maximum": 1.0, "description": "|pred ∩ gold| / |gold|, sequence-agnostic" },
+    "trace_correctness":  { "type": "number", "minimum": 0.0, "maximum": 1.0, "description": "|pred ∩ gold| / |pred|" },
+    "trace_order":        { "type": "number", "minimum": 0.0, "maximum": 1.0, "description": "Order agreement (e.g., normalized Kendall-τ/Kendall-like)" },
+
+    "policy_coverage":    { "type": "number", "minimum": 0.0, "maximum": 1.0, "description": "|retrieved ∩ gold| / |gold|" },
+    "hallucination_rate": { "type": "number", "minimum": 0.0, "maximum": 1.0, "description": "|pred_refs \\ gold| / max(1, |pred_refs|)" },
+
+    "runtime_ms_total":   { "type": "integer", "minimum": 0, "description": "End-to-end runtime per scenario (ms)" },
+    "latency_ms": {
+      "type": "object",
+      "required": ["retrieve","nlq","reason"],
+      "properties": {
+        "retrieve": { "type":"integer", "minimum":0, "description":"Retrieval latency (ms)" },
+        "nlq":      { "type":"integer", "minimum":0, "description":"NLQ-to-SQL latency (ms)" },
+        "reason":   { "type":"integer", "minimum":0, "description":"Rule/LLM reasoning latency (ms)" }
+      },
+      "additionalProperties": false
+    },
+
+    "timestamp": { "type": "string", "format": "date-time", "description": "ISO 8601 UTC timestamp" }
+  },
+  "additionalProperties": true
+}

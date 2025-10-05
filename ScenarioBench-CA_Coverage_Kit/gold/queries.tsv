@@ -1,0 +1,17 @@
+﻿scenario_id	canonical_sql
+ADSTAND-SOCIAL-TESTIMONIAL-001	SELECT clause_id FROM policy_clauses WHERE domain='ADSTAND' ORDER BY precedence DESC LIMIT 10;
+ADV-ADSTAND-SOCIAL-TESTIMONIAL-001-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-CASL-EMAIL-CEM-001-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-CASL-EMAIL-CEM-001-INCOMPLETE-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-CASL-EMAIL-UNSUB-003-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-CASL-EMAIL-UNSUB-003-INCOMPLETE-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-CRTC-SMS-DNCL-001-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-PIPEDA-WEB-PI-007-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+ADV-QL25-LANDING-CONSENT-001-AMBIGUOUS-001	SELECT clause_id FROM policy_clauses WHERE domain='ADV' ORDER BY precedence DESC LIMIT 10;
+CASL-EMAIL-CEM-001	SELECT clause_id FROM policy_clauses WHERE domain='CASL' ORDER BY precedence DESC LIMIT 10;
+CASL-EMAIL-TRANSACTIONAL-002	SELECT clause_id FROM policy_clauses WHERE domain='CASL' ORDER BY precedence DESC LIMIT 10;
+CASL-EMAIL-UNSUB-003	SELECT clause_id FROM policy_clauses WHERE domain='CASL' ORDER BY precedence DESC LIMIT 10;
+CRTC-SMS-DNCL-001	SELECT clause_id FROM policy_clauses WHERE domain='CRTC' ORDER BY precedence DESC LIMIT 10;
+PIPEDA-WEB-PI-007	SELECT clause_id FROM policy_clauses WHERE domain='PIPEDA' ORDER BY precedence DESC LIMIT 10;
+QL25-LANDING-CONSENT-001	SELECT clause_id FROM policy_clauses WHERE domain='QL25' ORDER BY precedence DESC LIMIT 10;

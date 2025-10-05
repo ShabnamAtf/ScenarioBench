@@ -1,0 +1,51 @@
+global:
+  seed: 20250914
+  out_dir: "build/stage20"
+  scenarios_glob: "scenarios/**/*.yml"
+  llm:
+    provider: "openai"
+    model: "gpt-4o-mini"
+    temperature: 0.0
+  retrievers:
+    bm25:   { k: 10 }
+    vector: { k: 10 }
+
+runs:
+  - id: rule_only
+    pipeline: "rules"         # -> engine=rule-only
+    reflect: false            # می‌شود reflection-step=0
+
+  - id: bm25_rag
+    pipeline: "rag"
+    retriever: "bm25"         # -> engine=bm25-rag
+    reflect: false
+
+  - id: vector_rag
+    pipeline: "rag"
+    retriever: "vector"       # -> engine=vector-rag
+    reflect: false
+
+  - id: hybrid_rag
+    pipeline: "rag_hybrid"    # -> engine=hybrid
+    retriever: ["bm25","vector"]
+    reflect: false
+
+  # نسخه‌های reflect=true با یک گام رفلکت
+  - id: rule_only_reflect
+    pipeline: "rules"
+    reflect: true
+
+  - id: bm25_rag_reflect
+    pipeline: "rag"
+    retriever: "bm25"
+    reflect: true
+
+  - id: vector_rag_reflect
+    pipeline: "rag"
+    retriever: "vector"
+    reflect: true
+
+  - id: hybrid_rag_reflect
+    pipeline: "rag_hybrid"
+    retriever: ["bm25","vector"]
+    reflect: true

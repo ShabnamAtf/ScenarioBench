@@ -1,0 +1,41 @@
+$schema: ../schema/scenario.schema.json
+id: CASL-EMAIL-CEM-001
+meta:
+  policy_family: CASL
+  clause_id: "CASL:section6"
+  modality: FORBID
+  channel: email
+  message_intent: CEM
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: [price]
+  substantiation: none
+  disclosures: [identity, unsubscribe]
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 1
+  evidence_required: []
+  expected_decision_space: block
+context:
+  sender_profile:
+    name: "GizmoHub"
+    domain: "gizmohub.example"
+  evidence_flags:
+    has_identity: true
+    has_unsubscribe: true
+content:
+  subject: "Mega deals! 60% off now"
+  body: "Click to save big."
+  landing_copy: "Hurry up!"
+gold_standard:
+  decision: block
+  rationale: "Commercial electronic message without valid consent (CASL s.6)."
+  policy_refs: ["CASL:section6"]
+  expected_trace:
+    - "is_cem(content)=true"
+    - "has_valid_consent(context)=false"
+    - "FORBID fires: CASL:section6"

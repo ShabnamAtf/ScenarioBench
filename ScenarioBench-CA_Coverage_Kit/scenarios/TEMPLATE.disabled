@@ -1,0 +1,44 @@
+
+### 5) `ScenarioBench-CA_Coverage_Kit/scenarios/TEMPLATE.yml`
+```yaml
+id: TEMPLATE-REPLACE-ME
+meta:
+  policy_family: CASL
+  clause_id: "CASL:section6"
+  modality: FORBID
+  channel: email
+  message_intent: CEM
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: [price]
+  substantiation: none
+  disclosures: [identity, unsubscribe]
+  exceptions: []
+  precedence_path: ["CASL:section6 -> CASL:exception-transactional"]
+  risk_severity: H
+  difficulty: 2
+  evidence_required: []
+  expected_decision_space: block
+context:
+  sender_profile:
+    name: "ACME Gadgets"
+    domain: "acme.example"
+  evidence_flags:
+    has_identity: true
+    has_unsubscribe: true
+    transactional_elements_present: false
+content:
+  subject: "Hot deals just for you!"
+  body: "Save 50% today only."
+  landing_copy: "Limited time sale."
+gold_standard:
+  decision: block
+  rationale: "CEM without valid consent; CASL s.6 applies."
+  policy_refs: ["CASL:section6"]
+  expected_trace:
+    - "is_cem(content)=true"
+    - "has_valid_consent(context)=false"
+    - "FORBID fires: CASL:section6"

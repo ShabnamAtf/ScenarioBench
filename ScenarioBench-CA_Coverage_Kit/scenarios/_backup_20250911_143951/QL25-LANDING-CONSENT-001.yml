@@ -1,0 +1,37 @@
+$schema: ../schema/scenario.schema.json
+id: QL25-LANDING-CONSENT-001
+meta:
+  policy_family: Quebec_Law25
+  clause_id: "QL25:Consent"
+  modality: REQUIRE
+  channel: landing_page
+  message_intent: informational
+  consent_state: none
+  relationship: none
+  audience: general
+  region: QC
+  pi_types: basic
+  claim_types: []
+  substantiation: none
+  disclosures: [privacy_link]
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 3
+  evidence_required: ["consent_notice_text"]
+  expected_decision_space: escalate
+context:
+  sender_profile: { name: "LocalGovQC", domain: "qc.example" }
+  evidence_flags: { consent_notice_present: false }
+content:
+  subject: ""
+  body: ""
+  landing_copy: "Create account to continue"
+gold_standard:
+  decision: escalate
+  rationale: "Consent mechanism missing for PI collection under Law 25."
+  policy_refs: ["QL25:Consent"]
+  expected_trace:
+    - "collects_pi(content)=true"
+    - "consent_mechanism_present=false"
+    - "REQUIRE unmet → escalate"

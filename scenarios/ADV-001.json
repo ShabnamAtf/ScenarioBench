@@ -1,0 +1,10 @@
+﻿{
+  "id": "ADV-001",
+  "context": { "channel": "email", "jurisdiction": "CA", "product": "Fund A" },
+  "content": "Promo copy contains claims that need_edit to comply with policy; no forbidden terms; not high_risk.",
+  "gold": {
+    "decision": "safe-rewrite",
+    "trace": ["C21","C05"],
+    "clauses": ["C21","C05"]
+  }
+}

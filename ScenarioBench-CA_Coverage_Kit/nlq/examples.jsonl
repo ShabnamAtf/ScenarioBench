@@ -1,0 +1,5 @@
+{"intent":"TopKClauses","slots":{"domain":"CASL","jurisdiction":"CA","k":5,"sort_by":"recency"}}
+{"intent":"CountClauses","slots":{"domain":"CASL","jurisdiction":"CA"}}
+{"intent":"ListProhibitions","slots":{"domain":"CRTC","jurisdiction":"CA"}}
+{"intent":"TopKClauses","slots":{"domain":"ADSTAND","jurisdiction":"CA","k":3}}
+{"intent":"CountClauses","slots":{"domain":"GEN","jurisdiction":"CA"}}

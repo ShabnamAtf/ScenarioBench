@@ -1,0 +1,66 @@
+﻿global:
+  seed: 20250914
+  out_dir: "build/stage20"
+  # IMPORTANT: run_eval.py expects a CSV path (not a glob)
+  scenarios_csv: "build/stage19/stage19_scenarios.csv"
+
+  # Optional model settings (only if your run_eval.py uses them)
+  llm:
+    provider: "openai"
+    model: "gpt-4o-mini"
+    temperature: 0.0
+
+  # Retriever defaults used to set --top-k per engine
+  retrievers:
+    bm25:   { k: 10 }
+    vector: { k: 10 }
+
+  # Optional version pins (uncomment if you use these flags)
+  # index_version: "v1"
+  # rules_version: "v1"
+  # policy_db_version: "v1"
+  # nlq_tpl_version: "v1"
+
+logging:
+  csv_summary: true
+
+runs:
+  # No-reflection
+  - id: rule_only
+    pipeline: "rules"
+    reflect: false
+
+  - id: bm25_rag
+    pipeline: "rag"
+    retriever: "bm25"
+    reflect: false
+
+  - id: vector_rag
+    pipeline: "rag"
+    retriever: "vector"
+    reflect: false
+
+  - id: hybrid_rag
+    pipeline: "rag_hybrid"
+    retriever: ["bm25","vector"]
+    reflect: false
+
+  # With reflection (reflection-step = 1)
+  - id: rule_only_reflect
+    pipeline: "rules"
+    reflect: true
+
+  - id: bm25_rag_reflect
+    pipeline: "rag"
+    retriever: "bm25"
+    reflect: true
+
+  - id: vector_rag_reflect
+    pipeline: "rag"
+    retriever: "vector"
+    reflect: true
+
+  - id: hybrid_rag_reflect
+    pipeline: "rag_hybrid"
+    retriever: ["bm25","vector"]
+    reflect: true

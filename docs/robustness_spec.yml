@@ -1,0 +1,88 @@
+version: 1
+seed: 20250914
+variant_n_per_scenario: 3
+naming_pattern: "{scenario_id}__{stressor}-{level}-{locale}-{seed}"
+
+locales:
+  - en
+  - fa
+
+reflection:
+  steps: [0, 1]        # برای برش Reflection Robustness؛ 0=بدون رفلکت، 1=یک‌بار رفلکت
+
+sampling:
+  mode: "one_at_a_time"  # یا "grid"
+  per_stressor_pct: 100  # اگر one_at_a_time است، برای هر تنش همهٔ سناریوها پوشش داده شوند
+
+stressors:
+  - id: "incomplete_ambiguous"
+    enabled: true
+    levels:
+      - name: "mild"
+        truncation_tokens_pct: 15
+        redact_entities: ["product", "jur_term"]
+        query_noise_pct: 5
+      - name: "strong"
+        truncation_tokens_pct: 35
+        redact_entities: ["product", "jur_term", "date"]
+        query_noise_pct: 12
+
+  - id: "distribution_shift"
+    enabled: true
+    levels:
+      - name: "lexical"
+        synonym_swap_pct: 20
+        ood_terms: ["campaign_boost", "promo_uplift"]
+      - name: "structural"
+        reorder_sections: true
+        insert_irrelevant_block_pct: 10
+
+  - id: "policy_drift_synthetic"
+    enabled: true
+    levels:
+      - name: "minor"
+        clause_edit_pct: 5
+        clause_version_bump: true
+      - name: "major"
+        clause_drop_pct: 10
+        clause_add_conflicts_pct: 5
+
+  - id: "rag_failure"
+    enabled: true
+    levels:
+      - name: "drop_topk"
+        drop_top_k: 3
+      - name: "vector_zero"
+        zero_vector_pct: 30
+      - name: "corrupt_text"
+        corrupt_chars_pct: 8
+
+  - id: "bilingual"
+    enabled: true
+    levels:
+      - name: "code_switch"
+        code_switch_pct: 20
+      - name: "full_fa"
+        locale: "fa"
+
+evaluation:
+  metrics:
+    - decision_precision
+    - decision_recall
+    - decision_f1
+    - trace_completeness
+    - trace_correctness
+    - trace_order
+    - policy_coverage
+    - hallucination_rate
+    - retrieval_recall_at_k
+    - retrieval_mrr
+    - retrieval_ndcg
+    - nlq_to_sql_accuracy
+    - runtime_ms
+    - latency_ms
+  per_condition_diff: true
+
+outputs:
+  build_dir: "build/stage21"
+  manifest:  "build/stage21/stage21_MANIFEST.json"

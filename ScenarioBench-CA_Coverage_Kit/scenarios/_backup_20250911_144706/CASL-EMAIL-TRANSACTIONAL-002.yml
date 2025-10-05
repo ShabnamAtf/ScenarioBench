@@ -1,0 +1,43 @@
+$schema: ../schema/scenario.schema.json
+id: CASL-EMAIL-TRANSACTIONAL-002
+title: CASL EMAIL TRANSACTIONAL 002
+audience: general
+region: CA
+content:
+  subject: 'Your receipt for Order #12345'
+  body: Thank you for your purchase. Attached is your receipt.
+  landing_copy: Order details
+gold:
+  decision: allow
+  rationale: Transactional exception defeats CASL s.6; identifiers + unsubscribe
+    present.
+  policy_refs:
+    - CASL:exception-transactional
+  expected_trace:
+    - is_transactional(content)=true
+    - identity_and_unsubscribe_present(content)=true
+    - PERMIT defeats FORBID via precedence
+meta:
+  policy_family: CASL
+  clause_id: CASL:exception-transactional
+  modality: PERMIT
+  channel: email
+  message_intent: transactional
+  consent_state: unknown
+  relationship: existing_client
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: []
+  substantiation: none
+  disclosures:
+    - identity
+    - unsubscribe
+  exceptions:
+    - CASL:section6
+  precedence_path:
+    - CASL:section6 -> CASL:exception-transactional
+  risk_severity: M
+  difficulty: 2
+  evidence_required: []
+  expected_decision_space: allow

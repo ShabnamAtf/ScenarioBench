@@ -1,0 +1,37 @@
+$schema: ../schema/scenario.schema.json
+id: CRTC-SMS-DNCL-001
+meta:
+  policy_family: CRTC_DNCL
+  clause_id: "CRTC:DNCL"
+  modality: FORBID
+  channel: sms
+  message_intent: CEM
+  consent_state: none
+  relationship: none
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: []
+  substantiation: none
+  disclosures: []
+  exceptions: []
+  precedence_path: []
+  risk_severity: H
+  difficulty: 2
+  evidence_required: ["dncl_status"]
+  expected_decision_space: block
+context:
+  sender_profile: { name: "QuickCash", domain: "quickcash.example" }
+  evidence_flags: { dncl_status: "listed" }
+content:
+  subject: ""
+  body: "Get instant cash—reply YES."
+  landing_copy: ""
+gold_standard:
+  decision: block
+  rationale: "Message to a number on the National DNCL; prohibited."
+  policy_refs: ["CRTC:DNCL"]
+  expected_trace:
+    - "channel=sms"
+    - "dncl_listed(context)=true"
+    - "FORBID fires: CRTC:DNCL"

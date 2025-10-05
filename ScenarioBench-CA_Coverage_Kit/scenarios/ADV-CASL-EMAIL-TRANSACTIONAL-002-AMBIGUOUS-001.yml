@@ -1,0 +1,58 @@
+$schema: ../schema/scenario.schema.json
+id: ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001
+title: CASL EMAIL TRANSACTIONAL 002 — DNCL listing (ambiguous/escalate)
+policy_family: CRTC_DNCL
+channel: sms
+message_intent: informational
+consent_state: unknown
+audience: general
+region: CA
+content:
+  subject: 'Your receipt for Order #12345'
+  body: 'Thank you for your purchase. Attached is your receipt.
+
+
+    [SMS to DNCL-listed number]'
+  landing_copy: Order details
+gold:
+  decision: escalate
+  rationale: Number listed on DNCL; requires manual review for applicable exemptions
+    or consent status.
+  expected_trace:
+  - CHECK:dncl_violation
+  - DECISION:escalate
+  policy_refs: []
+  trace: []
+  clause_set: []
+  sql: ''
+  topk: []
+meta:
+  policy_family: CASL
+  clause_id: CASL:exception-transactional
+  modality: PERMIT
+  channel: email
+  message_intent: transactional
+  consent_state: unknown
+  relationship: existing_client
+  audience: general
+  region: CA
+  pi_types: none
+  claim_types: []
+  substantiation: none
+  disclosures:
+  - identity
+  - unsubscribe
+  exceptions:
+  - CASL:section6
+  precedence_path:
+  - CASL:section6 -> CASL:exception-transactional
+  risk_severity: M
+  difficulty: 2
+  evidence_required: []
+  expected_decision_space: allow
+  variant_of: CASL-EMAIL-TRANSACTIONAL-002
+  variant: ambiguous
+evidence:
+  dncl_listed: true
+scenario_id: ADV-CASL-EMAIL-TRANSACTIONAL-002-AMBIGUOUS-001
+context: {}

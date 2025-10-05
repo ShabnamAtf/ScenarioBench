@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+set -eu
+echo 'Running NLQ tests...'
+export PYTHONPATH="$(pwd)/ScenarioBench-CA_Coverage_Kit"
+
+# prefer kit venv → repo venv → system python
+PY="./ScenarioBench-CA_Coverage_Kit/.venv/Scripts/python.exe"
+if [ ! -x "$PY" ]; then
+  PY="./.venv/Scripts/python.exe"
+fi
+if [ ! -x "$PY" ]; then
+  if command -v python >/dev/null 2>&1; then
+    PY="$(command -v python)"
+  else
+    echo "Python not found" >&2
+    exit 1
+  fi
+fi
+
+echo "Using Python: $PY"
+"$PY" -m pytest -q ScenarioBench-CA_Coverage_Kit/test

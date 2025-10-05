@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScenarioBench-CA Log v1",
+  "type": "object",
+  "required": [
+    "run_id","timestamp","scenario_id",
+    "input","engine","model",
+    "retrieval","sql","decision",
+    "trace","runtime_ms","versions"
+  ],
+  "properties": {
+    "run_id": {"type":"string","description":"UUID for this run"},
+    "timestamp": {"type":"string","format":"date-time"},
+    "scenario_id": {"type":"string"},
+    "scenario_yaml_hash": {"type":"string","description":"sha256 of YAML"},
+    "input": {
+      "type":"object",
+      "required":["context","content"],
+      "properties": {
+        "context":{"type":"string"},
+        "content":{"type":"string"}
+      }
+    },
+    "engine": {
+      "type":"string",
+      "enum":["rule-only","bm25-rag","vector-rag","hybrid"]
+    },
+    "model": {
+      "type":"object",
+      "required":["id"],
+      "properties":{
+        "id":{"type":"string"},
+        "provider":{"type":"string"},
+        "temperature":{"type":"number"},
+        "seed":{"type":"integer"}
+      }
+    },
+    "nlq_query": {"type":"string"},
+    "sql": {
+      "type":"object",
+      "required":["query","status"],
+      "properties":{
+        "query":{"type":"string"},
+        "status":{"type":"string","enum":["ok","error","empty"]},
+        "error":{"type":["string","null"]}
+      }
+    },
+    "retrieval": {
+      "type":"object",
+      "required":["top_k","ids","index_version"],
+      "properties":{
+        "top_k":{"type":"integer","minimum":0},
+        "ids":{"type":"array","items":{"type":"string"}},
+        "scores":{"type":"array","items":{"type":"number"}},
+        "index_version":{"type":"string"}
+      }
+    },
+    "decision": {
+      "type":"string",
+      "enum":["allow","block","safe-rewrite","escalate"]
+    },
+    "output": {
+      "type":"object",
+      "properties":{
+        "raw_model_output":{"type":"string"},
+        "safe_rewrite_text":{"type":"string"}
+      }
+    },
+    "trace": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["step","op"],
+        "properties":{
+          "step":{"type":"integer"},
+          "op":{"type":"string"},
+          "clause_id":{"type":["string","null"]},
+          "rule_id":{"type":["string","null"]},
+          "note":{"type":["string","null"]}
+        }
+      },
+      "description":"Execution trace; prefer clause_id refs"
+    },
+    "runtime_ms": {
+      "type":"object",
+      "required":["total"],
+      "properties":{
+        "total":{"type":"integer"},
+        "retrieval":{"type":"integer"},
+        "nlq":{"type":"integer"},
+        "rules":{"type":"integer"}
+      }
+    },
+    "versions": {
+      "type":"object",
+      "required":["rules_version","policy_db_version","log_schema_version"],
+      "properties":{
+        "rules_version":{"type":"string"},
+        "policy_db_version":{"type":"string"},
+        "nlq_template_version":{"type":"string"},
+        "log_schema_version":{"type":"string","const":"v1"}
+      }
+    },
+    "reflection_step":{"type":"integer","default":0},
+    "comment":{"type":"string"}
+  }
+}

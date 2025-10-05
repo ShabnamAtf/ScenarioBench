@@ -1,0 +1,33 @@
+﻿% docs/stage16_report_snippet.tex
+% ASCII-safe; requires \usepackage{booktabs}
+
+\paragraph{Stage-16 Evaluation.}
+We evaluate end-to-end decision quality and trace-grounding before and after reflection.
+For each system variant, we compute pre/post metrics and the reflective gain
+$\Delta =$ post $-$ pre. Higher-is-better metrics include accuracy, macro-F1,
+trace completeness, and policy coverage; lower-is-better include hallucination rate
+and runtime/latency (we still report $\Delta =$ post $-$ pre; negative values indicate gains).
+
+\noindent\textbf{Decision metrics.}
+Accuracy and macro-F1 are computed over the gold decisions across scenarios.
+We report micro counts as well as macro averages when applicable.
+
+\noindent\textbf{Trace metrics.}
+Given gold clause sequence $G$ and predicted trace $P$:
+Completeness $= |P \cap G| / |G|$,
+Correctness $= |P \cap G| / |P|$,
+and Order is a normalized score in $[0,1]$ (1.0 if exact order match, $2/3$ if same set, $1/3$ if partial overlap, else $0$).
+
+\noindent\textbf{Policy coverage \& hallucination.}
+Coverage $= |R \cap G|/|G|$ where $R$ are retrieved clause IDs; higher is better.
+Explanation-hallucination rate $= |P \setminus G| / \max(1, |P|)$; lower is better.
+
+\noindent\textbf{Runtime and latency.}
+We report total runtime per scenario and a latency breakdown:
+retrieve / NLQ-to-SQL / reasoning. Lower is better.
+
+\noindent\textbf{Reporting.}
+We provide pre/post means and $\Delta$ for each metric. The tables below are produced
+by the Stage-16 pipeline and can be included verbatim:
+
+\input{build/metrics/stage16_tables.tex}
