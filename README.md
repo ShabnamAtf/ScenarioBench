@@ -24,3 +24,4 @@ schema/                     # JSON Schemas for scenarios/logs
 spec/                       # log schema & docs
 stage16_run_all.bat         # starter scripts (Windows)
 stage16_run_sut.bat
+**[📄 Preprint (PDF)](docs/scenariobench-preprint.pdf)**
