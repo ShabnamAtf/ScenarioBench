@@ -1,4 +1,4 @@
-# ScenarioBench (Private)
+# ScenarioBench
 
 ## License
 MIT © 2025 Zahra Atf  
